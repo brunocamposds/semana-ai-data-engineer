@@ -38,9 +38,9 @@ Cada ferramenta tem um papel claro e aparece no dia certo, criando uma progress�
 | ----- | ----- | ----- | ----- |
 | Data Generation | ShadowTraffic | Gerar dados e-commerce (JSONL, Postgres) | 1 – 4 |
 | Fontes Externas | CSV \+ FastAPI Mock | Catálogo de produtos \+ API de estoque | 1 |
-| AI Coding | Claude Code \+ Cursor | Escrever código com IA, explorar dados | 1 – 4 |
+| AI Coding | Gemini CLI \+ Cursor | Escrever código com IA, explorar dados | 1 – 4 |
 | Tipagem/Schema | Pydantic | Validação e structured outputs | 1 – 2 |
-| LLM | Claude (Anthropic) | Motor de IA principal | 1 – 4 |
+| LLM | Gemini (Google) | Motor de IA principal | 1 – 4 |
 | RAG Framework | LlamaIndex | Indexação, embeddings, query engine | 2 – 3 |
 | Vector DB | Qdrant | The Memory – busca semântica | 2 – 4 |
 | Structured DB | Supabase (Postgres) | The Ledger – queries determinísticas | 3 – 4 |
@@ -49,7 +49,7 @@ Cada ferramenta tem um papel claro e aparece no dia certo, criando uma progress�
 | Interface | Chainlit | Chat conversacional com streaming | 4 |
 | Observabilidade | LangFuse | LLMOps / AgentOps – traces do agente | 4 |
 | Evals | DeepEval | Testar qualidade das respostas do agente | 3 – 4 |
-| Spec-Driven | PRD.md, CLAUDE.md | Contexto persistente para AI Coding | 1 |
+| Spec-Driven | PRD.md, GEMINI.md | Contexto persistente para AI Coding | 1 |
 | Infra | Docker Compose | Tudo local nos Dias 1–3 | 1 – 3 |
 | Cloud (Dia 4\) | Supabase \+ Qdrant Cloud | Migração para serviços gerenciados | 4 |
 
@@ -57,7 +57,7 @@ Cada ferramenta tem um papel claro e aparece no dia certo, criando uma progress�
 
 | Dia | Tema | Emoção | Entrega | Stack Nova |
 | ----- | ----- | ----- | ----- | ----- |
-| 1 Seg | INGERIR | Curiosidade | Pipeline de ingestão rodando | ShadowTraffic, Pydantic, Claude Code |
+| 1 Seg | INGERIR | Curiosidade | Pipeline de ingestão rodando | ShadowTraffic, Pydantic, Gemini CLI |
 | 2 Ter | CONTEXTUALIZAR | Confiança | IA respondendo sobre seus dados | LlamaIndex, Qdrant |
 | 3 Qua | CONECTAR | Empolgação | Agent com 2 pernas: SQL \+ Vector | Supabase, MCP, DeepEval |
 | 4 Qui | ORQUESTRAR | Orgulho | Multi-agent com chat \+ cloud | CrewAI, Chainlit, LangFuse |
@@ -122,9 +122,9 @@ O aluno sai com um pipeline de ingestão funcionando: ShadowTraffic gerando orde
 
 * O que é AI Data Engineering? Como IA muda o dia a dia do DE
 
-* Os 4 AI Coding Agents: Cursor (IDE), Claude Code (Terminal), Codex (Cloud), OpenClaw (Chat)
+* Os 4 AI Coding Agents: Cursor (IDE), Gemini CLI (Terminal), Codex (Cloud), OpenClaw (Chat)
 
-* Demo ao vivo: pedir ao Claude Code para explicar um schema de dados
+* Demo ao vivo: pedir ao Gemini CLI para explicar um schema de dados
 
 * Apresentação do ShopAgent – o que vamos construir na semana
 
@@ -144,7 +144,7 @@ O aluno sai com um pipeline de ingestão funcionando: ShadowTraffic gerando orde
 
 * Fonte 3: FastAPI mock retornando estoque por produto (5 min setup)
 
-* Claude Code explorando e validando os dados gerados
+* Gemini CLI explorando e validando os dados gerados
 
 **Bloco 3: Pydantic \+ Structured Outputs (21h30 – 22h30)**
 
@@ -154,17 +154,17 @@ O aluno sai com um pipeline de ingestão funcionando: ShadowTraffic gerando orde
 
 class Order(BaseModel):    order\_id: str    customer\_id: str    product: str    quantity: int \= Field(ge=1, le=100)    total: float \= Field(ge=0)    payment: Literal\['credit\_card', 'pix', 'boleto'\]order \= Order(\*\*raw\_json)  \# Validado\!
 
-* Structured Outputs com Claude: pedir análise dos dados e receber JSON tipado
+* Structured Outputs com Gemini: pedir análise dos dados e receber JSON tipado
 
-* Spec-Driven Development: criar PRD.md do ShopAgent com Claude Code
+* Spec-Driven Development: criar PRD.md do ShopAgent com Gemini CLI
 
-* Contexto persistente: CLAUDE.md e AGENTS.md
+* Contexto persistente: GEMINI.md e AGENTS.md
 
 **Bloco 4: Encerramento (22h30 – 23h)**
 
 * Recapitulação: “Vocês têm 3 fontes de dados reais e IA entendendo o schema”
 
-* Desafio: gerar 10.000 orders e identificar padrões com Claude
+* Desafio: gerar 10.000 orders e identificar padrões com Gemini
 
 *Entrega: Docker rodando \+ ShadowTraffic \+ CSV \+ API Mock \+ Pydantic \+ PRD.md*
 
@@ -196,7 +196,7 @@ O aluno sai sabendo construir contexto rico para IA e implementando RAG com Llam
 
 * Restrições e guardrails: limitar respostas ao domínio
 
-* Exercício: contexto que faz Claude responder “Qual ticket médio por região?”
+* Exercício: contexto que faz Gemini responder “Qual ticket médio por região?”
 
 **Bloco 3: RAG com LlamaIndex \+ Qdrant (21h15 – 22h30)**
 
@@ -212,7 +212,7 @@ O aluno sai sabendo construir contexto rico para IA e implementando RAG com Llam
 
   * Chunks → Embeddings → Qdrant (Docker local)
 
-  * Query: “clientes reclamando de entrega” → Vector Search → Claude responde
+  * Query: “clientes reclamando de entrega” → Vector Search → Gemini responde
 
 * Structured Outputs avançado: respostas em JSON para alimentar dashboards
 
@@ -254,7 +254,7 @@ O aluno sai com o ShopAgent conectado via MCP a duas fontes complementares: Supa
 
 * Conectar MCP oficial do Supabase
 
-* Demo: Claude Code consultando “faturamento total por região” via MCP → SQL exato
+* Demo: Gemini CLI consultando “faturamento total por região” via MCP → SQL exato
 
 * Tool Use: definir ferramentas (query\_sales, get\_customer, top\_products)
 
@@ -396,7 +396,7 @@ Podcast ao vivo (1–2h) com convidados. Tom descontraído e inspirador.
 
 | Dia | Semana (Intro – 20%) | Formação (Domínio – 100%) |
 | ----- | ----- | ----- |
-| 1 | ShadowTraffic \+ Pydantic \+ Claude Code | Foundation: 16 módulos \+ 4 AI Coding Agents completos |
+| 1 | ShadowTraffic \+ Pydantic \+ Gemini CLI | Foundation: 16 módulos \+ 4 AI Coding Agents completos |
 | 2 | Context Engineering \+ RAG básico \+ Qdrant | Workshops: Context Eng avançado \+ RAG production-ready |
 | 3 | MCP \+ Supabase \+ Qdrant \+ Tool Use | Workshops: MCP avançado \+ Evals \+ Multi-tool patterns |
 | 4 | CrewAI básico \+ Chainlit \+ LangFuse intro | Bootcamps: Multi-Agent completo \+ LLMOps \+ Deploy prod |

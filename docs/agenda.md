@@ -22,7 +22,7 @@ Em 4 noites praticas + 1 podcast, os participantes constroem do zero o **ShopAge
 ```
 +------------------+     +------------------+     +------------------+
 |  DATA GENERATION |     |   AI / LLM       |     |   INTERFACE      |
-|  ShadowTraffic   |     |   Claude         |     |   Chainlit       |
+|  ShadowTraffic   |     |   Gemini         |     |   Chainlit       |
 +--------+---------+     |   LlamaIndex     |     |   Impeccable     |
          |               |   LangChain      |     |   UI/UX Pro Max  |
          v               |   CrewAI         |     +--------+---------+
@@ -41,7 +41,7 @@ Em 4 noites praticas + 1 podcast, os participantes constroem do zero o **ShopAge
 
 | Dia | Tema | Emocao | O Participante Sai Com... |
 |-----|------|--------|--------------------------|
-| 1 Seg | **INGERIR** | Curiosidade | Dados fluindo + Claude Code + Agentic Commerce |
+| 1 Seg | **INGERIR** | Curiosidade | Dados fluindo + Gemini CLI + Agentic Commerce |
 | 2 Ter | **CONTEXTUALIZAR** | Confianca | IA pesquisando nos SEUS dados (RAG + Ledger) |
 | 3 Qua | **AGENTE** | Empolgacao | Agente autonomo + AgentSpec modo Deus |
 | 4 Qui | **MULTI-AGENT** | Orgulho | Time de agentes + Frontend lindo + Cloud |
@@ -50,7 +50,7 @@ Em 4 noites praticas + 1 podcast, os participantes constroem do zero o **ShopAge
 ### Progressao de Autonomia
 
 ```
-Dia 1: EU FACO, IA AJUDA         (Claude Code assiste)
+Dia 1: EU FACO, IA AJUDA         (Gemini CLI assiste)
 Dia 2: IA BUSCA, EU PERGUNTO     (RAG + Ledger via MCP)
 Dia 3: IA PROJETA, EU VALIDO     (AgentSpec + Agent autonomo)
 Dia 4: IA CONSTROI, IA EXECUTA   (AgentSpec + CrewAI + Frontend)
@@ -99,7 +99,7 @@ Agentic Commerce aparece como fio condutor em cada dia:
 
 1. **AI Data Engineering** -- numeros, cenario e realidade do mercado
 2. **AI Coding Agents** -- o que sao, tipos, quando usar cada
-3. **Claude Code** -- deep dive: Claude & Claude Code
+3. **Gemini CLI** -- deep dive: Gemini & Gemini CLI
 4. **Configuration** -- MCPs, SubAgents, KBs (conceitual)
 5. **Agentic Commerce & ShopAgent** -- o caso de uso disruptivo
 6. **ShadowTraffic** -- geracao de todos os dados do ShopAgent
@@ -113,14 +113,14 @@ Agentic Commerce aparece como fio condutor em cada dia:
 |---------|-----------|---------|
 | 20h00 | AI Data Engineering | O que e, numeros do mercado, como IA muda o DE |
 | 20h10 | AI Coding Agents | O que sao e os 4 tipos |
-| 20h18 | Panorama | Cursor (IDE), Claude Code (Terminal), Codex (Cloud), OpenClaw (Chat) |
+| 20h18 | Panorama | Cursor (IDE), Gemini CLI (Terminal), Codex (Cloud), OpenClaw (Chat) |
 
-#### Bloco 2: Claude Code Deep Dive (20h25 - 21h00)
+#### Bloco 2: Gemini CLI Deep Dive (20h25 - 21h00)
 
 | Horario | Atividade | Detalhes |
 |---------|-----------|---------|
-| 20h25 | O que e Claude & Claude Code | Anthropic, modelos, como funciona |
-| 20h35 | Demo ao vivo | Claude Code explorando dados, gerando codigo |
+| 20h25 | O que e Gemini & Gemini CLI | Google, modelos, como funciona |
+| 20h35 | Demo ao vivo | Gemini CLI explorando dados, gerando codigo |
 | 20h45 | Configuration | Conceito de MCPs, SubAgents, Knowledge Bases |
 | 20h55 | Preview | "Esses conceitos vao voltar nos Dias 2, 3 e 4 com forca total" |
 
@@ -143,7 +143,7 @@ Agentic Commerce aparece como fio condutor em cada dia:
 | 21h25 | docker-compose up | Subir ShadowTraffic + Postgres + Qdrant |
 | 21h35 | Config ShadowTraffic | Generators: customers, products, orders -> Postgres |
 | 21h50 | Reviews | Generator com textos realistas -> JSONL |
-| 22h00 | Validacao ao vivo | Claude Code explorando os dados gerados |
+| 22h00 | Validacao ao vivo | Gemini CLI explorando os dados gerados |
 
 **ShadowTraffic gera DOIS tipos de dados:**
 ```
@@ -199,9 +199,9 @@ ShadowTraffic
 
 | Horario | Atividade | Detalhes |
 |---------|-----------|---------|
-| 22h10 | Pydantic | Claude Code gera modelos a partir dos dados |
+| 22h10 | Pydantic | Gemini CLI gera modelos a partir dos dados |
 | 22h20 | Validacao | JSON bruto -> modelo tipado -> erro se invalido |
-| 22h30 | Structured Outputs | Claude retornando JSON tipado, nao texto livre |
+| 22h30 | Structured Outputs | Gemini retornando JSON tipado, nao texto livre |
 | 22h40 | Provocacao RAG | "E se fossem 50.000 reviews? E buscar por significado?" |
 
 ```python
@@ -218,14 +218,14 @@ class Order(BaseModel):
 order = Order(**raw_json)  # Validado!
 ```
 
-> **Provocacao final:** "Legal, o Claude analisou 10 reviews. Mas e se fossem 50.000?
-> E se eu perguntasse 'quem reclama de entrega?' -- o Claude nao tem acesso aos dados.
+> **Provocacao final:** "Legal, o Gemini analisou 10 reviews. Mas e se fossem 50.000?
+> E se eu perguntasse 'quem reclama de entrega?' -- o Gemini nao tem acesso aos dados.
 > Amanha vamos resolver isso."
 
 #### Bloco 6: Encerramento (22h45 - 23h00)
 
 - Recap: "Voces tem dados reais fluindo e entendem pra onde o mercado vai"
-- Desafio: gerar 10.000 orders e explorar com Claude Code
+- Desafio: gerar 10.000 orders e explorar com Gemini CLI
 - Preview Dia 2: "Amanha a IA vai pesquisar nos SEUS dados"
 
 **Entrega do Dia:**
@@ -251,12 +251,12 @@ order = Order(**raw_json)  # Validado!
 5. **RAG (Qdrant)** -- busca semantica em reviews
 6. **LlamaIndex** -- framework de ingestao e query
 7. **MCP** -- conectar ambos os stores
-8. **Claude Code pesquisa** -- demo fim a fim
+8. **Gemini CLI pesquisa** -- demo fim a fim
 
 ### A Progressao do Dia
 
 ```
-PROMPT ENGINEERING          "Pergunto direto pro Claude"
+PROMPT ENGINEERING          "Pergunto direto pro Gemini"
         |                    -> inventa quando nao sabe
         v
 CONTEXT ENGINEERING         "Dou contexto: schema, exemplos, restricoes"
@@ -265,7 +265,7 @@ CONTEXT ENGINEERING         "Dou contexto: schema, exemplos, restricoes"
 RAG vs LEDGER               "Dois tipos de dado, dois stores"
         |                    Texto -> Qdrant | Numeros -> Postgres
         v
-MCP CONECTA TUDO            "Claude Code pesquisa nos dois"
+MCP CONECTA TUDO            "Gemini CLI pesquisa nos dois"
                              -> demo fim a fim
 ```
 
@@ -275,19 +275,19 @@ MCP CONECTA TUDO            "Claude Code pesquisa nos dois"
 
 | Horario | Atividade | Detalhes |
 |---------|-----------|---------|
-| 20h00 | Prompt Engineering | Pergunta direto pro Claude -- funciona? |
-| 20h08 | Demo: falha | "Qual meu faturamento de marco?" -> Claude inventa |
+| 20h00 | Prompt Engineering | Pergunta direto pro Gemini -- funciona? |
+| 20h08 | Demo: falha | "Qual meu faturamento de marco?" -> Gemini inventa |
 | 20h12 | Context Engineering | A evolucao: contexto > prompt (Karpathy, 2026) |
 | 20h20 | Os 4 pilares | System Prompt + Schema + Few-Shot + Restricoes |
-| 20h30 | Demo: melhora | Com contexto, Claude gera SQL correto (mas nao executa) |
+| 20h30 | Demo: melhora | Com contexto, Gemini gera SQL correto (mas nao executa) |
 | 20h38 | O problema | "Melhor, mas os dados mudam todo dia. Preciso de dados FRESCOS." |
 
 ```python
-# SEM contexto -- Claude inventa
+# SEM contexto -- Gemini inventa
 "Qual faturamento do meu e-commerce em marco?"
 # -> "Desculpe, nao tenho acesso aos seus dados..."
 
-# COM contexto -- Claude entende o schema
+# COM contexto -- Gemini entende o schema
 system = """Schema: customers (state, segment), orders (total, status, payment)
 Exemplo: "Pedidos por pix?" -> SELECT COUNT(*) FROM orders WHERE payment='pix'"""
 # -> "SELECT c.state, SUM(o.total) FROM orders o JOIN customers c..."
@@ -317,7 +317,7 @@ Exemplo: "Pedidos por pix?" -> SELECT COUNT(*) FROM orders WHERE payment='pix'""
 |---------|-----------|---------|
 | 21h00 | Os dados ja estao la | ShadowTraffic do Dia 1 populou o Postgres |
 | 21h05 | MCP Supabase | Conectar MCP oficial ao Postgres local |
-| 21h15 | Demo | Claude Code: "Faturamento por estado?" -> SQL via MCP -> resultado |
+| 21h15 | Demo | Gemini CLI: "Faturamento por estado?" -> SQL via MCP -> resultado |
 | 21h25 | Exercicio | Perguntas que so SQL resolve (agregacoes, JOINs) |
 
 ```json
@@ -332,7 +332,7 @@ Exemplo: "Pedidos por pix?" -> SELECT COUNT(*) FROM orders WHERE payment='pix'""
 ```
 
 ```
-Claude Code > "Qual faturamento total por estado?"
+Gemini CLI > "Qual faturamento total por estado?"
   [MCP Supabase] -> execute_sql ->
   
   state | pedidos | faturamento
@@ -371,22 +371,22 @@ response = query_engine.query("Clientes reclamando de entrega")
 # -> "Encontrei 23 reviews: 'demorou 15 dias', 'nao recebi', 'frete caro'..."
 ```
 
-#### Bloco 5: Claude Code Pesquisa nos Dois (22h15 - 22h45)
+#### Bloco 5: Gemini CLI Pesquisa nos Dois (22h15 - 22h45)
 
 | Horario | Atividade | Detalhes |
 |---------|-----------|---------|
-| 22h15 | As duas pernas juntas | Claude Code com MCP Supabase + MCP Qdrant |
+| 22h15 | As duas pernas juntas | Gemini CLI com MCP Supabase + MCP Qdrant |
 | 22h25 | Demo fim a fim | Perguntas hibridas ao vivo |
-| 22h35 | Exploracao | Participantes sugerem perguntas, Claude Code responde |
+| 22h35 | Exploracao | Participantes sugerem perguntas, Gemini CLI responde |
 
 ```
-Claude Code > "Quais clientes do Sudeste reclamam de entrega?"
+Gemini CLI > "Quais clientes do Sudeste reclamam de entrega?"
   [MCP Qdrant] -> busca semantica -> 23 reviews
 
-Claude Code > "Qual o ticket medio desses clientes?"
+Gemini CLI > "Qual o ticket medio desses clientes?"
   [MCP Supabase] -> SELECT AVG(total) -> R$ 347,82
 
-Claude Code > "Resumo executivo"
+Gemini CLI > "Resumo executivo"
   -> "23 clientes do Sudeste com problemas de entrega.
       Ticket medio: R$ 347,82 (75% acima da media).
       Temas: atraso (15), extravio (5), custo frete (3)."
@@ -405,7 +405,7 @@ Claude Code > "Resumo executivo"
 - [x] Prompt Eng -> Context Eng (evolucao entendida)
 - [x] Postgres populado + MCP Supabase conectado (Ledger)
 - [x] Qdrant indexado + MCP Qdrant conectado (Memory/RAG)
-- [x] Claude Code pesquisando nos dois stores
+- [x] Gemini CLI pesquisando nos dois stores
 - [x] LlamaIndex pipeline completo
 
 ---
@@ -426,7 +426,7 @@ Claude Code > "Resumo executivo"
 ### O Salto do Dia 3
 
 ```
-Dias 1-2: Usamos Claude Code no modo "normal"
+Dias 1-2: Usamos Gemini CLI no modo "normal"
           Plan Mode, perguntas diretas, codigo passo a passo
           
 Dia 3:    MODO DEUS
@@ -487,8 +487,8 @@ Agent (ReAct):
 **O momento "modo Deus":**
 ```bash
 # Ate agora (Dias 1-2): Plan Mode, manual
-Claude Code > "Cria um agente que consulta Supabase e Qdrant"
-# -> Claude gera codigo passo a passo, voce vai ajustando
+Gemini CLI > "Cria um agente que consulta Supabase e Qdrant"
+# -> Gemini gera codigo passo a passo, voce vai ajustando
 
 # Agora (Dia 3): AgentSpec
 /agentspec:brainstorm "ShopAgent: agente e-commerce com Qdrant + Supabase via MCP"
@@ -533,9 +533,9 @@ Claude Code > "Cria um agente que consulta Supabase e Qdrant"
 ```python
 # LangChain Agent com 2 tools
 from langchain.agents import create_react_agent
-from langchain_anthropic import ChatAnthropic
+from langchain_anthropic import ChatGoogle
 
-llm = ChatAnthropic(model="claude-sonnet-4-20250514")
+llm = ChatGoogle(model="gemini-1.5-pro")
 agent = create_react_agent(llm, tools=[supabase_tool, qdrant_tool])
 
 # O agente DECIDE sozinho qual tool usar
@@ -730,18 +730,18 @@ test = LLMTestCase(
 
 | Horario | Atividade | Detalhes |
 |---------|-----------|---------|
-| 22h15 | O setup | Impeccable + UI/UX Pro Max Skill no Claude Code |
-| 22h20 | Geracao ao vivo | Claude Code gera pagina e-commerce do ShopAgent |
+| 22h15 | O setup | Impeccable + UI/UX Pro Max Skill no Gemini CLI |
+| 22h20 | Geracao ao vivo | Gemini CLI gera pagina e-commerce do ShopAgent |
 | 22h28 | O resultado | Pagina profissional com design system completo |
 
 > **Esse e o momento que mata todo mundo.**
 >
 > Ate agora: backend, dados, agentes, terminal.
-> Agora: Claude Code gera um **frontend lindo de e-commerce** em minutos.
+> Agora: Gemini CLI gera um **frontend lindo de e-commerce** em minutos.
 
 **As ferramentas:**
 
-- **Impeccable** (18.5k stars) -- Design skill para Claude Code com 7 dominios
+- **Impeccable** (18.5k stars) -- Design skill para Gemini CLI com 7 dominios
   (tipografia, cores OKLCH, spatial design, motion, interacao, responsivo, UX writing)
   e 18 comandos (/audit, /polish, /animate, /colorize...)
 
@@ -751,13 +751,13 @@ test = LLMTestCase(
 ```bash
 # Instalar as skills
 # Impeccable
-cp -r impeccable/.claude your-project/
+cp -r impeccable/.aide your-project/
 
 # UI/UX Pro Max
-uipro init --ai claude
+uipro init --ai gemini
 
 # Gerar a pagina do ShopAgent
-Claude Code > "Cria uma pagina de e-commerce para o ShopAgent.
+Gemini CLI > "Cria uma pagina de e-commerce para o ShopAgent.
                Dashboard com metricas de vendas, reviews de clientes,
                e chat com o agente integrado. Stack: HTML + Tailwind."
 
@@ -796,7 +796,7 @@ O ShopAgent rodando end-to-end:
 
 | Dia | O que construimos |
 |-----|-------------------|
-| 1 | Dados reais + Agentic Commerce + Claude Code |
+| 1 | Dados reais + Agentic Commerce + Gemini CLI |
 | 2 | IA pesquisando nos dados (RAG + Ledger + MCP) |
 | 3 | Agente autonomo + AgentSpec modo Deus |
 | 4 | Multi-agent + Frontend profissional + Cloud |
@@ -890,7 +890,7 @@ O ShopAgent rodando end-to-end:
 
 | Dia | Stack Nova | Stack Acumulada |
 |-----|-----------|-----------------|
-| 1 | ShadowTraffic, Pydantic, Claude Code, Docker | ShadowTraffic, Pydantic, Claude Code, Docker |
+| 1 | ShadowTraffic, Pydantic, Gemini CLI, Docker | ShadowTraffic, Pydantic, Gemini CLI, Docker |
 | 2 | LlamaIndex, Qdrant, Postgres, MCP, Context Eng | + LlamaIndex, Qdrant, MCP |
 | 3 | AgentSpec, LangChain, Chainlit, Design Patterns | + AgentSpec, LangChain, Chainlit |
 | 4 | CrewAI, DeepEval, LangFuse, Impeccable, UI/UX Pro Max, Cloud | Tudo: sistema completo |
@@ -901,7 +901,7 @@ O ShopAgent rodando end-to-end:
 
 | Dia | Semana (Intro -- 20%) | Formacao (Dominio -- 100%) |
 |-----|----------------------|---------------------------|
-| 1 | ShadowTraffic + Pydantic + Claude Code | Foundation: 16 modulos + 4 AI Coding Agents |
+| 1 | ShadowTraffic + Pydantic + Gemini CLI | Foundation: 16 modulos + 4 AI Coding Agents |
 | 2 | Context Eng + RAG + Ledger + MCP | Workshops: RAG production-ready + MCP avancado |
 | 3 | AgentSpec basico + LangChain + Chainlit | Workshops: AgentSpec completo (58 agentes, 22 dominios) |
 | 4 | CrewAI + DeepEval + LangFuse + Frontend | Bootcamps: Multi-Agent + LLMOps + Deploy prod |

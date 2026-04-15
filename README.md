@@ -15,7 +15,7 @@ Days 1-3 run 100% locally with Docker. Day 4 migrates the same architecture to t
 ```text
 +------------------+     +------------------+     +------------------+
 |  DATA GENERATION |     |   AI / LLM       |     |   INTERFACE      |
-|  ShadowTraffic   |     |   Claude         |     |   Chainlit       |
+|  ShadowTraffic   |     |   Gemini         |     |   Chainlit       |
 +--------+---------+     |   LlamaIndex     |     +--------+---------+
          |               |   LangChain      |              |
          v               |   CrewAI         |              v
@@ -34,14 +34,14 @@ Days 1-3 run 100% locally with Docker. Day 4 migrates the same architecture to t
 
 ## Quickstart
 
-Prerequisites: Docker, an Anthropic API key, and a ShadowTraffic license
+Prerequisites: Docker, a Google Gemini API key, and a ShadowTraffic license
 (free trial at <https://shadowtraffic.io>).
 
 ```bash
 cd gen
 cp .env.example .env
 cp license.env.example license.env
-# Set ANTHROPIC_API_KEY in .env
+# Set GEMINI_API_KEY in .env
 # Set your ShadowTraffic license fields in license.env
 # Get a free trial at https://shadowtraffic.io
 docker compose up
@@ -53,7 +53,7 @@ Services started: Postgres on 5432, Qdrant on 6333, ShadowTraffic (data generato
 
 | Day | Theme | Stack |
 |-----|-------|-------|
-| 1 Mon | INGERIR | ShadowTraffic, Pydantic, Claude Code, Docker |
+| 1 Mon | INGERIR | ShadowTraffic, Pydantic, Gemini CLI, Docker |
 | 2 Tue | CONTEXTUALIZAR | LlamaIndex, Qdrant, Postgres, MCP |
 | 3 Wed | AGENTE | LangChain, Chainlit, AgentSpec |
 | 4 Thu | MULTI-AGENT | CrewAI, DeepEval, LangFuse, Cloud |
@@ -91,8 +91,8 @@ prompts/                # Sequenced live-coding prompts per day
 src/                    # Python requirements per day
 presentation/           # HTML slide decks
   d1-ingest.html        # Day 1 slides (143 slides)
-.claude/kb/             # 18 knowledge base domains
-.claude/agents/         # SubAgents (ai-ml, code-quality, communication, domain, exploration)
+.aide/kb/             # 18 knowledge base domains
+.aide/agents/         # SubAgents (ai-ml, code-quality, communication, domain, exploration)
 ```
 
 ---
