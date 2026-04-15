@@ -10,6 +10,8 @@ Days 1-3 run 100% locally with Docker. Day 4 migrates the same architecture to t
 
 *Central question: O que eu consigo fazer agora que nao conseguia antes?*
 
+- **Portuguese Language:** Use Portuguese for user-facing content, accent words, and slide content as specified in the curriculum.
+
 ## Architecture
 
 ```text
